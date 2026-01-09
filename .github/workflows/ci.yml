@@ -37,7 +37,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
-          source: "build/libs/*.jar"
+          source: "build/libs"
           target: "/home/ubuntu/app"
 
       # 6️⃣ EC2에서 애플리케이션 재시작
@@ -51,4 +51,4 @@ jobs:
           script_stop: false   # ⭐ 중요 (pkill 때문에 실패 방지)
           script: |
             pkill -f java || true
-            nohup java -jar /home/ubuntu/app/*.jar > app.log 2>&1 &
+            nohup java -jar /home/ubuntu/app/build/libs/*.jar > app.log 2>&1 &
