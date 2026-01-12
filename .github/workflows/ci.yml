@@ -48,7 +48,7 @@ jobs:
           username: ubuntu
           key: ${{ secrets.SERVER_SSH_KEY }}
           port: 22
-          script_stop: false   # ⭐ 중요 (pkill 때문에 실패 방지)
+          script_stop: false
           script: |
             cd /home/ubuntu/app
             pkill -f ci-cd-practice || true
