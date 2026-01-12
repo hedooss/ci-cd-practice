@@ -9,6 +9,7 @@ public class TestController {
     
     @GetMapping("/test")
     public String test() {
+        System.err.println("Test endpoint called");
         return "CI/CD Practice Successful!";
     }
 }
