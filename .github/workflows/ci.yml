@@ -52,4 +52,4 @@ jobs:
           script: |
             pkill -f java || true
             cd /home/ubuntu/app
-            nohup java -jar build/libs/ci-cd-practice-0.0.1-SNAPSHOT.jar > app.log 2>&1 &
+            nohup java -jar build/libs/*.jar > app.log 2>&1 &
